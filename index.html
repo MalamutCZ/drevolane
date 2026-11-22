@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dřevo Laně – prodej a rozvoz palivového dřeva | Razice, Bílinsko</title>
-<meta name="description" content="Palivové dřevo – listnaté tvrdé, listnatá směs, listnaté měkké, štípané i špalky, odřezky a třísky na podpal. Rozvoz od Razic u Hrobčic u Bíliny, nad 5 prms do 10 km zdarma. Tel. +420 604 191 299.">
+<meta name="description" content="Palivové dřevo – listnaté tvrdé, listnatá směs, listnaté měkké, štípané i špalky a třísky na podpal. Rozvoz od Razic u Hrobčic u Bíliny, nad 5 prms do 10 km zdarma. Tel. +420 604 191 299.">
 <meta property="og:title" content="Dřevo Laně – palivové dřevo s rozvozem">
 <meta property="og:description" content="Štípané palivové dřevo s rozvozem od Razic u Bíliny, nad 5 prms do 10 km zdarma.">
 <meta property="og:type" content="website">
@@ -212,8 +212,7 @@ Dřevo Laně
 <article class="card price-card"><div class="kind">Tvrdé · suché</div><h3>Listnaté tvrdé suché</h3><p>Tvrdé listnaté dřevo, suché – připravené k topení.</p><div class="prow"><span>štípané / prms</span><b>1 700 Kč</b></div><div class="prow"><span>špalky / prms</span><b>1 600 Kč</b></div></article>
 <article class="card price-card"><div class="kind">Směs</div><h3>Listnatá směs</h3><p>Mix tvrdého a měkkého listnatého dřeva. Dobrý poměr ceny a výhřevnosti.</p><div class="prow"><span>štípané / prms</span><b>1 200 Kč</b></div><div class="prow"><span>špalky / prms</span><b>1 100 Kč</b></div></article>
 <article class="card price-card"><div class="kind">Měkké</div><h3>Listnaté měkké</h3><p>Měkké listnaté dřevo. Rychle se rozhoří, vhodné na roztápění.</p><div class="prow"><span>štípané / prms</span><b>900 Kč</b></div><div class="prow"><span>špalky / prms</span><b>800 Kč</b></div></article>
-<article class="card price-card"><div class="kind">Mix</div><h3>Odřezky od pily</h3><p>Kusy z pily, vhodné na podpal a do kotlů.</p><div class="prow"><span>za prms</span><b>450–500&nbsp;Kč</b></div></article>
-<article class="card price-card"><div class="kind">Podpal</div><h3>Pytlované suché třísky</h3><p>Suché třísky v pytli, na podpal.</p><div class="prow"><span>za pytel</span><b>50&nbsp;Kč</b></div></article>
+<article class="card price-card"><div class="kind">Podpal</div><h3>Pytlované suché třísky</h3><p>Suché třísky v pytli, na podpal.</p><div class="prow"><span>za pytel</span><b>500&nbsp;Kč</b></div></article>
 </div>
 <p class="note">Špalky = nerozštípané kusy. Rovnané dřevo (prm) na dotaz.</p>
 </div>
@@ -233,7 +232,6 @@ Dřevo Laně
 <button type="button" class="pill" data-wood="suche" aria-pressed="false">Listnaté tvrdé suché</button>
 <button type="button" class="pill" data-wood="smes" aria-pressed="false">Listnatá směs</button>
 <button type="button" class="pill" data-wood="mekke" aria-pressed="false">Listnaté měkké</button>
-<button type="button" class="pill" data-wood="odrezky" aria-pressed="false">Odřezky od pily</button>
 </div>
 </fieldset>
 <fieldset id="formField">
@@ -381,7 +379,6 @@ Dřevo Laně
 <option>Listnaté tvrdé suché</option>
 <option>Listnatá směs</option>
 <option>Listnaté měkké</option>
-<option>Odřezky od pily</option>
 <option>Pytlované suché třísky</option>
 </select></label>
 <label>Množství (prms)<input type="number" name="mnozstvi" id="formQty" min="1" value="3"></label>
@@ -404,7 +401,7 @@ Dřevo Laně
 
 <script>
 (function(){
-  var WOODS = {"tvrde": {"name": "Listnaté tvrdé", "stipane": 1500, "spalky": 1400}, "suche": {"name": "Listnaté tvrdé suché", "stipane": 1700, "spalky": 1600}, "smes": {"name": "Listnatá směs", "stipane": 1200, "spalky": 1100}, "mekke": {"name": "Listnaté měkké", "stipane": 900, "spalky": 800}, "odrezky": {"name": "Odřezky od pily", "price": 450, "from": true}};  // ceny za prms (štípané / špalky)
+  var WOODS = {"tvrde": {"name": "Listnaté tvrdé", "stipane": 1500, "spalky": 1400}, "suche": {"name": "Listnaté tvrdé suché", "stipane": 1700, "spalky": 1600}, "smes": {"name": "Listnatá směs", "stipane": 1200, "spalky": 1100}, "mekke": {"name": "Listnaté měkké", "stipane": 900, "spalky": 800}};  // ceny za prms (štípané / špalky)
   var KM_RATE = 20, LOAD = 6, FREE_KM = 10;  // doprava: Kč/km tam i zpět, prms na jednu cestu, km zdarma (nad 5 prms)
   var st = {wood:'tvrde', form:'stipane', qty:3, km:5};
   var fmt = function(n){ return n.toLocaleString('cs-CZ') + ' Kč'; };
