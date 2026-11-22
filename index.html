@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dřevo Laně – prodej a rozvoz palivového dřeva | Razice, Bílinsko</title>
+<meta name="description" content="Štípané palivové dřevo – akát, dub, bříza, listnatá i jehličnatá směs, topol, odřezky. Rozvoz zdarma do 25 km od Razic u Hrobčic u Bíliny. Tel. +420 604 191 299.">
+<meta property="og:title" content="Dřevo Laně – palivové dřevo s rozvozem">
+<meta property="og:description" content="Štípané palivové dřevo, rozvoz zdarma do 25 km od Razic u Bíliny.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "LocalBusiness",
+ "name": "Dřevo Laně",
+ "founder": "Vít Laně",
+ "description": "Prodej a rozvoz palivového dřeva, rozvoz zdarma do 25 km od Razic u Hrobčic u Bíliny.",
+ "telephone": "+420604191299",
+ "email": "info@dřevolane.cz",
+ "areaServed": {
+  "@type": "GeoCircle",
+  "geoMidpoint": {
+   "@type": "Place",
+   "name": "Razice, Hrobčice"
+  },
+  "geoRadius": "25000"
+ },
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+   ],
+   "opens": "08:00",
+   "closes": "16:00"
+  }
+ ]
+}
+</script>
+<style>
+:root{
+  --sand:#E8DCC7; --card:#EEE5D5; --alt:#DCCFB6; --oat:#D4B895;
+  --sage:#8B9D83; --moss:#606C38; --moss-deep:#4A5530;
+  --clay:#8E4826; --ink:#2E3326; --muted:#4F5244;
+  --line:#CDBF9F; --field:#B5A687; --light:#EEE5D5; --gold:#EBD3A0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:Epilogue,system-ui,sans-serif;line-height:1.55;position:relative}
+a{color:var(--moss-deep)}a:hover{color:var(--ink)}
+h1,h2,.serif{font-family:Fraunces,Georgia,serif;font-weight:600}
+h2{margin:0 0 8px;font-size:clamp(1.9rem,4vw,2.5rem)}
+input,select,textarea,button{font:inherit;color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+section{padding:80px 24px}
+.alt{background:var(--alt)}
+.lead{margin:0 0 32px;color:var(--muted);max-width:680px}
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;opacity:.03;z-index:50}
+
+/* header */
+header{background:var(--moss);color:var(--light)}
+header .wrap{padding:16px 24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;color:var(--light);text-decoration:none;font-family:Fraunces,serif;font-weight:600;font-size:22px}
+.logo:hover{color:var(--light)}
+nav{display:flex;flex-wrap:wrap;gap:22px;font-size:15px;font-weight:500}
+nav a{color:var(--light);text-decoration:none}nav a:hover{color:var(--gold)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;transition:transform .4s ease,background-color .4s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-moss{background:var(--moss-deep);color:var(--light)}.btn-moss:hover{color:var(--light)}
+.btn-sand{background:var(--sand);color:var(--ink)}.btn-sand:hover{color:var(--ink)}
+.btn-sm{min-height:44px;padding:10px 20px;font-size:15px}
+
+/* hero */
+.hero{position:relative;background:var(--sage);padding:72px 24px 88px;overflow:hidden}
+.rings{position:absolute;right:-140px;top:-120px;width:640px;height:640px;pointer-events:none;animation:breathe 6s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.035);opacity:.8}}
+.hero .wrap{position:relative;display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end}
+.hero-text{flex:999 1 520px;min-width:0}
+.kicker{margin:0 0 14px;font-weight:600;font-size:15px}
+h1{margin:0;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.01em}
+.hero-sub{margin:22px 0 0;font-size:19px;max-width:600px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.facts{flex:1 1 300px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fact{background:var(--sand);border-radius:24px;padding:20px}
+.fact b{display:block;font-family:Fraunces,serif;font-size:30px;font-weight:600;color:var(--clay)}
+.fact span{font-size:14px;color:var(--muted)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:26px}
+.price-card{display:flex;flex-direction:column;gap:8px;transition:transform .4s ease}
+.price-card:hover{transform:translateY(-2px)}
+.price-card .kind{font-size:13px;font-weight:600;color:var(--moss-deep)}
+.price-card h3{margin:0;font-family:Fraunces,serif;font-size:24px;font-weight:600}
+.price-card p{margin:0;color:var(--muted);font-size:15px;flex-grow:1}
+.price{font-family:Fraunces,serif;font-size:28px;font-weight:600;color:var(--clay)}
+.price span{font-family:Epilogue,sans-serif;font-size:15px;font-weight:500;color:var(--muted)}
+.note{margin:20px 0 0;font-size:14px;color:var(--muted)}
+.step-no{font-family:Fraunces,serif;font-size:44px;font-weight:600;color:var(--moss)}
+.card h3{margin:4px 0 8px;font-size:19px}
+.card p{margin:0;color:var(--muted)}
+.info{margin-top:22px;background:var(--oat);border-radius:28px;padding:26px;display:flex;flex-wrap:wrap;gap:24px}
+.info>div{flex:1 1 260px}
+.info h3{margin:0 0 6px;font-size:18px}
+.info p{margin:0}
+.unit h3{font-family:Fraunces,serif;font-size:22px;font-weight:600;margin:0 0 6px}
+.unit{border:0}
+
+/* calculator */
+.calc{display:flex;flex-wrap:wrap;gap:32px}
+.calc-main{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+fieldset{border:0;margin:0;padding:0}
+legend,.label{font-weight:600;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{min-height:44px;padding:10px 18px;border-radius:999px;border:1px solid var(--field);background:var(--card);color:var(--ink);font-weight:600;cursor:pointer;transition:background-color .4s ease,color .4s ease}
+.pill[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:var(--light)}
+.qty{display:flex;align-items:center;gap:8px}
+.round{width:44px;height:44px;border-radius:999px;border:1px solid var(--field);background:var(--card);font-size:22px;cursor:pointer}
+.qty output{min-width:56px;text-align:center;font-family:Fraunces,serif;font-size:28px;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:32px}
+.summary{flex:1 1 320px;align-self:flex-start;background:var(--moss);color:var(--light);border-radius:32px;padding:30px;display:flex;flex-direction:column;gap:14px}
+.summary .small{font-size:14px;color:var(--sand)}
+.summary .what{font-family:Fraunces,serif;font-size:23px;font-weight:600}
+.line{display:flex;justify-content:space-between;font-size:15px;color:var(--sand)}
+.total{border-top:1px solid var(--sage);padding-top:14px;display:flex;justify-content:space-between;align-items:baseline}
+.total output{font-family:Fraunces,serif;font-size:34px;font-weight:600;color:var(--gold)}
+
+/* form */
+.contact{display:flex;flex-wrap:wrap;gap:40px}
+.contact-info{flex:1 1 300px}
+.contact-info dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 12px}
+.contact-info dt{font-weight:700}.contact-info dd{margin:0}
+form{flex:999 1 520px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:32px;padding:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+form label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+form input,form select,form textarea{min-height:44px;padding:10px 14px;border:1px solid var(--field);border-radius:16px;background:var(--sand);font-weight:400}
+form .full{grid-column:1/-1}
+form .check{flex-direction:row;align-items:flex-start;gap:10px;color:var(--muted);font-weight:400}
+form .check input{width:20px;height:20px;min-height:0;margin:0;accent-color:var(--moss)}
+form button{grid-column:1/-1;min-height:52px;font-size:17px;font-weight:700;background:var(--moss);color:var(--light)}
+.hp{position:absolute;left:-9999px}
+
+footer{background:var(--moss-deep);color:var(--sand);padding:32px 24px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+
+:focus-visible{outline:3px solid var(--clay);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rings{animation:none}.btn,.price-card,.pill{transition:none}.btn:hover,.price-card:hover{transform:none}}
+</style>
+</head>
+<body>
+<svg class="grain" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#grain)"/></svg>
+
+<header>
+<div class="wrap">
+<a href="#top" class="logo">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8DCC7" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><circle cx="12.4" cy="11.6" r="6.2"/><circle cx="12.8" cy="11.3" r="3.2"/><circle cx="13" cy="11.2" r="0.8"/></svg>
+Dřevo Laně
+</a>
+<nav aria-label="Hlavní menu">
+<a href="#cenik">Ceník</a>
+<a href="#kalkulacka">Kalkulačka</a>
+<a href="#doprava">Doprava</a>
+<a href="#jednotky">Jednotky</a>
+<a href="#poptavka">Poptávka</a>
+</nav>
+<a href="tel:+420604191299" class="btn btn-sand btn-sm">+420 604 191 299</a>
+</div>
+</header>
+
+<main>
+<section id="top" class="hero">
+<svg class="rings" viewBox="0 0 600 600" fill="none" stroke="#606C38" stroke-width="1.4" aria-hidden="true">
+<circle cx="300" cy="300" r="290"/><circle cx="306" cy="296" r="252"/><circle cx="310" cy="292" r="218"/><circle cx="314" cy="290" r="182"/><circle cx="318" cy="288" r="150"/><circle cx="320" cy="286" r="118"/><circle cx="322" cy="285" r="88"/><circle cx="323" cy="284" r="60"/><circle cx="324" cy="284" r="34"/><circle cx="324" cy="284" r="12"/>
+</svg>
+<div class="wrap">
+<div class="hero-text">
+<p class="kicker">Prodej a rozvoz palivového dřeva · Razice a okolí do 25 km</p>
+<h1>Štípané dřevo, přivezené až k vám</h1>
+<p class="hero-sub">Tvrdé i měkké dřevo nařezané na délku, kterou potřebujete, připravené rovnou do kamen, krbu nebo kotle.</p>
+<div class="actions">
+<a href="#kalkulacka" class="btn btn-moss">Spočítat cenu</a>
+<a href="#cenik" class="btn btn-sand">Zobrazit ceník</a>
+</div>
+</div>
+<div class="facts">
+<div class="fact"><b>25–50 cm</b><span>délka polen</span></div>
+<div class="fact"><b>25 km</b><span>rozvoz zdarma</span></div>
+</div>
+</div>
+</section>
+
+<section id="cenik">
+<div class="wrap">
+<h2>Ceník</h2>
+<p class="lead">Ceny za 1 prostorový metr sypaný (prms), polena 33 cm, včetně DPH.</p>
+<div class="grid">
+<article class="card price-card"><div class="kind">Tvrdé</div><h3>Akát</h3><p>Jedno z nejvýhřevnějších dřev, hoří velmi dlouho a stálým žárem.</p><div class="price">2 300 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Tvrdé</div><h3>Dub</h3><p>Velmi hustý, hoří pomalu. Ideální do kotlů a kamen.</p><div class="price">2 200 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Tvrdé</div><h3>Bříza</h3><p>Rychle se rozhoří, pěkný plamen, oblíbená do krbů.</p><div class="price">1 900 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Tvrdé</div><h3>Listnatá směs</h3><p>Mix listnáčů (dub, buk, habr, jasan…). Dobrý poměr ceny a výhřevnosti.</p><div class="price">1 800 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Měkké</div><h3>Smrk</h3><p>Levnější varianta, rychlý start ohně a podpal.</p><div class="price">1 400 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Měkké</div><h3>Jehličnatá směs</h3><p>Smrk, borovice, modřín. Rychle hoří, vhodná na roztápění a přechodné období.</p><div class="price">1 300 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Měkké</div><h3>Topol</h3><p>Lehké a levné dřevo, rychle se rozhoří. Na podpal a do krbu.</p><div class="price">1 100 Kč <span>/ prms</span></div></article>
+<article class="card price-card"><div class="kind">Mix</div><h3>Odřezky</h3><p>Krátké kusy z pily, vhodné na podpal a do kotlů.</p><div class="price">900 Kč <span>/ prms</span></div></article>
+</div>
+<p class="note">Příplatek za délku 25 cm: +100&nbsp;Kč / prms. Délka 50 cm: −50&nbsp;Kč / prms. Rovnané dřevo (prm) na dotaz.</p>
+</div>
+</section>
+
+<section id="kalkulacka" class="alt">
+<div class="wrap calc">
+<div class="calc-main">
+<div>
+<h2>Kalkulačka ceny</h2>
+<p class="lead" style="margin:0">Vyberte druh dřeva, délku a množství. Cena je orientační.</p>
+</div>
+<fieldset>
+<legend>Druh dřeva</legend>
+<div class="pills" id="woodPills">
+<button type="button" class="pill" data-wood="akat" aria-pressed="false">Akát</button>
+<button type="button" class="pill" data-wood="dub" aria-pressed="true">Dub</button>
+<button type="button" class="pill" data-wood="briza" aria-pressed="false">Bříza</button>
+<button type="button" class="pill" data-wood="listnata" aria-pressed="false">Listnatá směs</button>
+<button type="button" class="pill" data-wood="smrk" aria-pressed="false">Smrk</button>
+<button type="button" class="pill" data-wood="jehlicnata" aria-pressed="false">Jehličnatá směs</button>
+<button type="button" class="pill" data-wood="topol" aria-pressed="false">Topol</button>
+<button type="button" class="pill" data-wood="odrezky" aria-pressed="false">Odřezky</button>
+</div>
+</fieldset>
+<fieldset>
+<legend>Délka polen</legend>
+<div class="pills" id="lenPills">
+<button type="button" class="pill" data-len="25" aria-pressed="false">25 cm</button>
+<button type="button" class="pill" data-len="33" aria-pressed="true">33 cm</button>
+<button type="button" class="pill" data-len="50" aria-pressed="false">50 cm</button>
+</div>
+</fieldset>
+<div class="row">
+<div>
+<div class="label" id="qtyLabel">Množství (prms)</div>
+<div class="qty" role="group" aria-labelledby="qtyLabel">
+<button type="button" class="round" id="dec" aria-label="Ubrat">−</button>
+<output id="qty" aria-live="polite">3</output>
+<button type="button" class="round" id="inc" aria-label="Přidat">+</button>
+</div>
+</div>
+<div>
+<div class="label">Doprava</div>
+<p style="margin:0;min-height:44px;display:flex;align-items:center">Zdarma do 25 km od Razic. Dál dle dohody.</p>
+</div>
+</div>
+</div>
+<aside class="summary" aria-live="polite">
+<div class="small">Orientační cena</div>
+<div class="what" id="what">Dub, 33 cm, 3 prms</div>
+<div class="line"><span>Dřevo</span><span id="woodTotal"></span></div>
+<div class="line"><span>Doprava</span><span>zdarma</span></div>
+<div class="total"><span>Celkem s DPH</span><output id="total"></output></div>
+<a href="#poptavka" class="btn btn-sand" id="toForm">Poptat cenu</a>
+</aside>
+</div>
+</section>
+
+<section id="doprava">
+<div class="wrap">
+<h2 style="margin-bottom:32px">Jak to probíhá</h2>
+<div class="grid">
+<div class="card"><div class="step-no">1</div><h3>Poptáte</h3><p>Zavoláte nebo pošlete žádost o cenovou nabídku. Ozveme se s cenou a termínem.</p></div>
+<div class="card"><div class="step-no">2</div><h3>Přivezeme</h3><p>Najednou přivezeme až 6 prms. Vysypeme, kam ukážete – potřebujeme volný příjezd.</p></div>
+<div class="card"><div class="step-no">3</div><h3>Zaplatíte</h3><p>Hotově nebo převodem při převzetí. Vystavíme doklad.</p></div>
+</div>
+<div class="info">
+<div><h3>Rozvoz</h3><p>Zdarma do 25 km od Razic (u Hrobčic u Bíliny). Dál dle dohody.</p></div>
+<div><h3>Kdy volat</h3><p>V pracovní dny od 8:00 do 16:00 na <a href="tel:+420604191299">+420 604 191 299</a>.</p></div>
+</div>
+</div>
+</section>
+
+<section id="jednotky" class="alt">
+<div class="wrap">
+<h2>Kolik je vlastně metr dřeva?</h2>
+<p class="lead">Dřevo se prodává v různých jednotkách. Ať víte, co přesně kupujete:</p>
+<div class="grid">
+<div class="card unit"><h3>prms – sypaný</h3><p>Polena volně nasypaná do prostoru 1 × 1 × 1 m, s mezerami. Tak dřevo vozíme.</p></div>
+<div class="card unit"><h3>prm – rovnaný</h3><p>Polena pečlivě srovnaná. 1 prm ≈ 1,5–1,7 prms (podle délky polen).</p></div>
+<div class="card unit"><h3>m³ – plnometr</h3><p>Čistá dřevní hmota bez mezer. 1 m³ ≈ 1,5 prm ≈ 2,4 prms.</p></div>
+</div>
+</div>
+</section>
+
+<section id="poptavka">
+<div class="wrap contact">
+<div class="contact-info">
+<h2>Žádost o cenovou nabídku</h2>
+<p class="lead" style="margin-bottom:24px">Napište, co potřebujete, a pošleme vám cenovou nabídku.</p>
+<dl>
+<dt>Telefon:</dt><dd><a href="tel:+420604191299">+420 604 191 299</a></dd>
+<dt>E-mail:</dt><dd><a href="mailto:info@xn--devolane-3ub.cz">info@dřevolane.cz</a></dd>
+<dt>Volejte:</dt><dd>po–pá 8:00–16:00</dd>
+<dt>Rozvoz:</dt><dd>zdarma do 25 km od Razic</dd>
+<dt>Provozovatel:</dt><dd>Vít Laně</dd>
+<dt>IČO:</dt><dd>[IČO]</dd>
+</dl>
+</div>
+<!-- Formulář odesílá přes Formspree – viz README, krok 3 -->
+<form id="form" action="https://formspree.io/f/VAS_FORMSPREE_ID" method="POST">
+<input type="hidden" name="_subject" value="Poptávka palivového dřeva z webu">
+<input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label>Jméno a příjmení<input type="text" name="jmeno" autocomplete="name" required></label>
+<label>Telefon<input type="tel" name="telefon" autocomplete="tel" required></label>
+<label>E-mail<input type="email" name="email" autocomplete="email"></label>
+<label>Adresa doručení<input type="text" name="adresa" autocomplete="street-address" required></label>
+<label>Druh dřeva<select name="drevo" id="formWood">
+<option>Akát</option>
+<option>Dub</option>
+<option>Bříza</option>
+<option>Listnatá směs</option>
+<option>Smrk</option>
+<option>Jehličnatá směs</option>
+<option>Topol</option>
+<option>Odřezky</option>
+</select></label>
+<label>Množství (prms)<input type="number" name="mnozstvi" id="formQty" min="1" value="3"></label>
+<label>Délka polen<select name="delka" id="formLen"><option>25 cm</option><option selected>33 cm</option><option>50 cm</option></select></label>
+<label>Preferovaný termín<input type="date" name="termin"></label>
+<label class="full">Poznámka (příjezd, další přání…)<textarea name="poznamka" rows="3"></textarea></label>
+<label class="full check"><input type="checkbox" name="souhlas" required>Souhlasím se zpracováním osobních údajů pro zpracování poptávky.</label>
+<button type="submit" class="btn">Odeslat žádost o nabídku</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<span>© <span id="year">2026</span> Vít Laně · IČO [IČO]</span>
+<span>Prodej a rozvoz palivového dřeva · Razice, Bílinsko</span>
+</div>
+</footer>
+
+<script>
+(function(){
+  var WOODS = {"akat": {"name": "Akát", "price": 2300}, "dub": {"name": "Dub", "price": 2200}, "briza": {"name": "Bříza", "price": 1900}, "listnata": {"name": "Listnatá směs", "price": 1800}, "smrk": {"name": "Smrk", "price": 1400}, "jehlicnata": {"name": "Jehličnatá směs", "price": 1300}, "topol": {"name": "Topol", "price": 1100}, "odrezky": {"name": "Odřezky", "price": 900}};
+  var S25 = 100, D50 = 50;
+  var st = {wood:'dub', len:33, qty:3};
+  var fmt = function(n){ return n.toLocaleString('cs-CZ') + ' Kč'; };
+  function press(group, attr, val){
+    group.querySelectorAll('.pill').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset[attr] == val ? 'true' : 'false'); });
+  }
+  function render(){
+    var w = WOODS[st.wood];
+    var unit = w.price + (st.len === 25 ? S25 : 0) - (st.len === 50 ? D50 : 0);
+    var sum = unit * st.qty;
+    document.getElementById('qty').textContent = st.qty;
+    document.getElementById('what').textContent = w.name + ', ' + st.len + ' cm, ' + st.qty + ' prms';
+    document.getElementById('woodTotal').textContent = fmt(sum);
+    document.getElementById('total').textContent = fmt(sum);
+    press(document.getElementById('woodPills'), 'wood', st.wood);
+    press(document.getElementById('lenPills'), 'len', st.len);
+  }
+  document.getElementById('woodPills').addEventListener('click', function(e){
+    var b = e.target.closest('.pill'); if (b) { st.wood = b.dataset.wood; render(); }
+  });
+  document.getElementById('lenPills').addEventListener('click', function(e){
+    var b = e.target.closest('.pill'); if (b) { st.len = +b.dataset.len; render(); }
+  });
+  document.getElementById('inc').addEventListener('click', function(){ st.qty = Math.min(30, st.qty + 1); render(); });
+  document.getElementById('dec').addEventListener('click', function(){ st.qty = Math.max(1, st.qty - 1); render(); });
+  // Přenese výběr z kalkulačky do formuláře
+  document.getElementById('toForm').addEventListener('click', function(){
+    document.getElementById('formWood').value = WOODS[st.wood].name;
+    document.getElementById('formQty').value = st.qty;
+    document.getElementById('formLen').value = st.len + ' cm';
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  render();
+})();
+</script>
+</body>
+</html>
