@@ -255,8 +255,13 @@ Dřevo Laně
 </div>
 </div>
 <div>
-<div class="label">Doprava</div>
-<p style="margin:0;min-height:44px;display:flex;align-items:center">Nad 5 prms zdarma do 10 km od Razic. Jinak dle dohody.</p>
+<div class="label" id="kmLabel">Vzdálenost od Razic</div>
+<div class="qty" role="group" aria-labelledby="kmLabel">
+<button type="button" class="round" id="kmDec" aria-label="Méně km">−</button>
+<output id="km" aria-live="polite" style="min-width:72px">5 km</output>
+<button type="button" class="round" id="kmInc" aria-label="Více km">+</button>
+</div>
+<p style="margin:8px 0 0;font-size:14px;color:var(--muted);max-width:300px">Nad 5 prms do 10 km zdarma, jinak 20 Kč/km tam i zpět.</p>
 </div>
 </div>
 </div>
@@ -280,7 +285,7 @@ Dřevo Laně
 <div class="card"><div class="step-no">3</div><h3>Zaplatíte</h3><p>Hotově nebo převodem při převzetí. Vystavíme doklad.</p></div>
 </div>
 <div class="info">
-<div><h3>Rozvoz</h3><p>Při objednávce nad 5 prms vozíme zdarma do 10 km od Razic (u Hrobčic u Bíliny), počítáno po silnici. Vozíme autem s kontejnerem do 10 t. Menší množství nebo delší vzdálenost dle dohody.</p></div>
+<div><h3>Rozvoz</h3><p>Při objednávce nad 5 prms vozíme zdarma do 10 km od Razic (u Hrobčic u Bíliny), počítáno po silnici. Vozíme autem s kontejnerem do 10 t. Jinak účtujeme dopravu 20 Kč za km – cestu k vám i zpět.</p></div>
 <div><h3>Kdy volat</h3><p>V pracovní dny od 8:00 do 16:00 na <a href="tel:+420604191299">+420 604 191 299</a>.</p></div>
 </div>
 <div style="margin-top: 22px; background: #EEE5D5; border: 1px solid #CDBF9F; border-radius: 28px; padding: 26px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
@@ -332,7 +337,7 @@ Dřevo Laně
 <p style="margin: 0 0 18px; color: #4F5244">Při objednávce nad 5 prms do 10 km po silnici z Razic. Čísla jsou orientační dojezdové vzdálenosti, schéma není v měřítku. U obcí blízko hranice záleží na konkrétní adrese – zavolejte.</p>
 <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px">
 <li style="display: flex; align-items: center; gap: 12px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #4A5530; flex: none"></span><span>do 10 km – zdarma</span></li>
-<li style="display: flex; align-items: center; gap: 12px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #7A7566; flex: none"></span><span>mimo – doprava dle dohody</span></li>
+<li style="display: flex; align-items: center; gap: 12px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #7A7566; flex: none"></span><span>mimo – doprava 20 Kč/km (tam i zpět)</span></li>
 <li style="display: flex; align-items: center; gap: 12px"><span style="width: 26px; height: 16px; border-radius: 8px; background: rgba(139,157,131,.45); border: 2px solid #606C38; flex: none"></span><span>dojezdová vzdálenost 10 km</span></li>
 </ul>
 </div>
@@ -405,7 +410,8 @@ Dřevo Laně
 (function(){
   var WOODS = {"akat": {"name": "Akát", "price": 2300}, "dub": {"name": "Dub", "price": 2200}, "briza": {"name": "Bříza", "price": 1900}, "listnata": {"name": "Listnatá směs", "price": 1800}, "smrk": {"name": "Smrk", "price": 1400}, "jehlicnata": {"name": "Jehličnatá směs", "price": 1300}, "topol": {"name": "Topol", "price": 1100}, "odrezky": {"name": "Odřezky", "price": 900}};
   var S25 = 100, D50 = 50;
-  var st = {wood:'dub', len:33, qty:3};
+  var KM_RATE = 20, LOAD = 6, FREE_KM = 10;  // doprava: Kč/km tam i zpět, prms na jednu cestu, km zdarma (nad 5 prms)
+  var st = {wood:'dub', len:33, qty:3, km:5};
   var fmt = function(n){ return n.toLocaleString('cs-CZ') + ' Kč'; };
   function press(group, attr, val){
     group.querySelectorAll('.pill').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset[attr] == val ? 'true' : 'false'); });
@@ -417,8 +423,11 @@ Dřevo Laně
     document.getElementById('qty').textContent = st.qty;
     document.getElementById('what').textContent = w.name + ', ' + st.len + ' cm, ' + st.qty + ' prms';
     document.getElementById('woodTotal').textContent = fmt(sum);
-    document.getElementById('total').textContent = fmt(sum);
-    document.getElementById('delivery').textContent = st.qty > 5 ? 'zdarma do 10 km' : 'dle dohody';
+    var free = st.qty > 5 && st.km <= FREE_KM;
+    var del = free ? 0 : Math.ceil(st.qty / LOAD) * st.km * 2 * KM_RATE;
+    document.getElementById('km').textContent = st.km + ' km';
+    document.getElementById('delivery').textContent = free ? 'zdarma' : fmt(del);
+    document.getElementById('total').textContent = fmt(sum + del);
     press(document.getElementById('woodPills'), 'wood', st.wood);
     press(document.getElementById('lenPills'), 'len', st.len);
   }
@@ -429,6 +438,8 @@ Dřevo Laně
     var b = e.target.closest('.pill'); if (b) { st.len = +b.dataset.len; render(); }
   });
   document.getElementById('inc').addEventListener('click', function(){ st.qty = Math.min(30, st.qty + 1); render(); });
+  document.getElementById('kmInc').addEventListener('click', function(){ st.km = Math.min(100, st.km + 1); render(); });
+  document.getElementById('kmDec').addEventListener('click', function(){ st.km = Math.max(1, st.km - 1); render(); });
   document.getElementById('dec').addEventListener('click', function(){ st.qty = Math.max(1, st.qty - 1); render(); });
   // Přenese výběr z kalkulačky do formuláře
   document.getElementById('toForm').addEventListener('click', function(){
