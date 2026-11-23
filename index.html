@@ -105,9 +105,9 @@ h1{margin:0;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.05;letter-spacing:-
 .price-card h3{margin:0;font-family:Fraunces,serif;font-size:24px;font-weight:600}
 .price-card p{margin:0;color:var(--muted);font-size:15px;flex-grow:1}
 .price{font-family:Fraunces,serif;font-size:28px;font-weight:600;color:var(--clay)}
-.prow{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;border-top:1px solid var(--line);padding-top:10px}
+.prow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:12px;border-top:1px solid var(--line);padding-top:10px}
 .prow+.prow{border-top:0;padding-top:0}
-.prow span{font-size:15px;color:var(--muted);white-space:nowrap}
+.prow span{font-size:15px;color:var(--muted)}
 .prow b{white-space:nowrap;font-family:Fraunces,serif;font-size:26px;font-weight:600;color:var(--clay)}
 .price span{font-family:Epilogue,sans-serif;font-size:15px;font-weight:500;color:var(--muted)}
 .note{margin:20px 0 0;font-size:14px;color:var(--muted)}
