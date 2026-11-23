@@ -22,6 +22,8 @@
  "description": "Prodej a rozvoz palivového dřeva, při objednávce nad 5 prms rozvoz zdarma do 10 km od Razic u Hrobčic u Bíliny.",
  "telephone": "+420604191299",
  "email": "info@pilabílina.cz",
+ "taxID": "10451919",
+ "address": {"@type": "PostalAddress", "streetAddress": "Razice 62", "postalCode": "418 04", "addressLocality": "Hrobčice", "addressCountry": "CZ"},
  "areaServed": {
   "@type": "GeoCircle",
   "geoMidpoint": {
@@ -369,7 +371,8 @@ Palivové dřevo, Pila Bílina
 <dt>Volejte:</dt><dd>po–pá 8:00–16:00</dd>
 <dt>Rozvoz:</dt><dd>nad 5 prms zdarma do 10 km od Razic</dd>
 <dt>Provozovatel:</dt><dd>Vít Laně</dd>
-<dt>IČO:</dt><dd>[IČO]</dd>
+<dt>Sídlo:</dt><dd>Razice 62, 418 04 Hrobčice</dd>
+<dt>IČO:</dt><dd>10451919</dd>
 </dl>
 </div>
 <!-- Formulář odesílá přes Formspree – viz README, krok 3 -->
@@ -391,16 +394,22 @@ Palivové dřevo, Pila Bílina
 <label>Úprava<select name="uprava" id="formForm"><option selected>Štípané</option><option>Špalky</option></select></label>
 <label>Preferovaný termín<input type="date" name="termin"></label>
 <label class="full">Poznámka (příjezd, další přání…)<textarea name="poznamka" rows="3"></textarea></label>
-<label class="full check"><input type="checkbox" name="souhlas" required>Souhlasím se zpracováním osobních údajů pro zpracování poptávky.</label>
+<label class="full check"><input type="checkbox" name="souhlas" required>Beru na vědomí <a href="#osobni-udaje">zpracování osobních údajů</a> pro vyřízení poptávky.</label>
 <button type="submit" class="btn">Odeslat žádost o nabídku</button>
 </form>
+</div>
+</section>
+<section id="osobni-udaje" style="padding:0 24px 56px">
+<div class="wrap" style="border-top:1px solid var(--line);padding-top:24px">
+<h2 style="font-size:20px">Ochrana osobních údajů</h2>
+<p style="margin:0;max-width:860px;font-size:14px;color:var(--muted)">Údaje z poptávkového formuláře (jméno, telefon, e-mail, adresa doručení a poznámku) zpracovává Vít Laně, IČO 10451919, se sídlem Razice 62, 418 04 Hrobčice, jako správce, a to jen za účelem vyřízení vaší poptávky a případné objednávky (jednání o uzavření smlouvy). Údaje nepředáváme dalším osobám kromě poskytovatele technické služby, přes kterou formulář odesílá zprávy. Uchováváme je po dobu nutnou k vyřízení poptávky; pokud dojde k objednávce, po dobu stanovenou účetními a daňovými předpisy. Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování a právo podat stížnost u Úřadu pro ochranu osobních údajů. Své požadavky pište na info@pilabílina.cz.</p>
 </div>
 </section>
 </main>
 
 <footer>
 <div class="wrap">
-<span>© <span id="year">2026</span> Vít Laně · IČO [IČO]</span>
+<span>Vít Laně · Razice 62, 418 04 Hrobčice · IČO 10451919 · fyzická osoba zapsaná v živnostenském rejstříku</span>
 <span>Prodej a rozvoz palivového dřeva · Razice, Bílinsko</span>
 </div>
 </footer>
@@ -448,7 +457,6 @@ Palivové dřevo, Pila Bílina
     document.getElementById('formQty').value = st.qty;
     if (!WOODS[st.wood].price) document.getElementById('formForm').value = st.form === 'spalky' ? 'Špalky' : 'Štípané';
   });
-  document.getElementById('year').textContent = new Date().getFullYear();
   render();
 })();
 </script>

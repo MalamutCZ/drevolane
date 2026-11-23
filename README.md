@@ -57,7 +57,7 @@ Doporučení: zaregistrujte i doménu bez háčků (`drevolane.cz`) a přesměru
 
 ## 5. Co ještě doplnit / zkontrolovat před spuštěním
 
-- [ ] **IČO** – v `index.html` 2× text `[IČO]`
+- [x] **IČO a sídlo** – doplněno podle ARES (IČO 10451919)
 - [ ] **Ceny** – v ceníku jsou zatím vzorové ceny. Mění se na jednom místě: v souboru jsou karty ceníku i objekt `WOODS` v JavaScriptu dole (cena musí sedět v obou)
 - [ ] **ID Formspree** (krok 3)
 - [ ] **Zásady ochrany osobních údajů (GDPR)** – formulář sbírá jméno, telefon a adresu; vhodné je doplnit krátkou stránku nebo odstavec, kdo údaje zpracovává a proč
