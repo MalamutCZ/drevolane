@@ -1,6 +1,9 @@
 # Přesměrování na https://www.pilabilina.cz
 # POZOR: nahrajte až po zapnutí SSL certifikátu v administraci Active24,
 # jinak se web nenačte.
+# Úvodní stránka webu (index.html má přednost před výchozím index.php)
+DirectoryIndex index.html index.php
+
 RewriteEngine On
 RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
