@@ -8,6 +8,8 @@
 <meta property="og:title" content="Dřevo Laně – palivové dřevo s rozvozem">
 <meta property="og:description" content="Štípané palivové dřevo s rozvozem od Razic u Bíliny, nad 5 prms do 10 km zdarma.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.pilabilina.cz/">
+<link rel="canonical" href="https://www.pilabilina.cz/">
 <meta property="og:locale" content="cs_CZ">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +22,9 @@
  "name": "Dřevo Laně",
  "founder": "Vít Laně",
  "description": "Prodej a rozvoz palivového dřeva, při objednávce nad 5 prms rozvoz zdarma do 10 km od Razic u Hrobčic u Bíliny.",
+ "url": "https://www.pilabilina.cz/",
  "telephone": "+420604191299",
- "email": "info@pilabílina.cz",
+ "email": "info@pilabilina.cz",
  "taxID": "10451919",
  "address": {"@type": "PostalAddress", "streetAddress": "Razice 62", "postalCode": "418 04", "addressLocality": "Hrobčice", "addressCountry": "CZ"},
  "areaServed": {
@@ -159,6 +162,9 @@ form .check{flex-direction:row;align-items:flex-start;gap:10px;color:var(--muted
 form .check input{width:20px;height:20px;min-height:0;margin:0;accent-color:var(--moss)}
 form button{grid-column:1/-1;min-height:52px;font-size:17px;font-weight:700;background:var(--moss);color:var(--light)}
 .hp{position:absolute;left:-9999px}
+.form-msg{border-radius:16px;padding:14px 16px;font-weight:600}
+.form-msg.ok{background:#8B9D83}
+.form-msg.err{background:#D4B895}
 
 footer{background:var(--moss-deep);color:var(--sand);padding:32px 24px;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
@@ -372,7 +378,7 @@ Palivové dřevo, Pila Bílina
 <p class="lead" style="margin-bottom:24px">Napište, co potřebujete, a pošleme vám cenovou nabídku.</p>
 <dl>
 <dt>Telefon:</dt><dd><a href="tel:+420604191299">+420 604 191 299</a></dd>
-<dt>E-mail:</dt><dd><a href="mailto:info@xn--pilablina-k5a.cz">info@pilabílina.cz</a></dd>
+<dt>E-mail:</dt><dd><a href="mailto:info@pilabilina.cz">info@pilabilina.cz</a></dd>
 <dt>Volejte:</dt><dd>po–pá 8:00–16:00</dd>
 <dt>Rozvoz:</dt><dd>nad 5 prms zdarma do 10 km od Razic</dd>
 <dt>Provozovatel:</dt><dd>Vít Laně</dd>
@@ -380,10 +386,10 @@ Palivové dřevo, Pila Bílina
 <dt>IČO:</dt><dd>10451919</dd>
 </dl>
 </div>
-<!-- Formulář odesílá přes Formspree – viz README, krok 3 -->
-<form id="form" action="https://formspree.io/f/VAS_FORMSPREE_ID" method="POST">
-<input type="hidden" name="_subject" value="Poptávka palivového dřeva z webu">
-<input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<!-- Formulář odesílá kontakt.php na hostingu (PHP) -->
+<form id="form" action="kontakt.php" method="POST">
+<div class="form-msg full" id="formMsg" role="status" hidden></div>
+<input type="text" name="web" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label>Jméno a příjmení<input type="text" name="jmeno" autocomplete="name" required></label>
 <label>Telefon<input type="tel" name="telefon" autocomplete="tel" required></label>
 <label>E-mail<input type="email" name="email" autocomplete="email"></label>
@@ -407,7 +413,7 @@ Palivové dřevo, Pila Bílina
 <section id="osobni-udaje" style="padding:0 24px 56px">
 <div class="wrap" style="border-top:1px solid var(--line);padding-top:24px">
 <h2 style="font-size:20px">Ochrana osobních údajů</h2>
-<p style="margin:0;max-width:860px;font-size:14px;color:var(--muted)">Údaje z poptávkového formuláře (jméno, telefon, e-mail, adresa doručení a poznámku) zpracovává Vít Laně, IČO 10451919, se sídlem Razice 62, 418 04 Hrobčice, jako správce, a to jen za účelem vyřízení vaší poptávky a případné objednávky (jednání o uzavření smlouvy). Údaje nepředáváme dalším osobám kromě poskytovatele technické služby, přes kterou formulář odesílá zprávy. Uchováváme je po dobu nutnou k vyřízení poptávky; pokud dojde k objednávce, po dobu stanovenou účetními a daňovými předpisy. Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování a právo podat stížnost u Úřadu pro ochranu osobních údajů. Své požadavky pište na info@pilabílina.cz.</p>
+<p style="margin:0;max-width:860px;font-size:14px;color:var(--muted)">Údaje z poptávkového formuláře (jméno, telefon, e-mail, adresa doručení a poznámku) zpracovává Vít Laně, IČO 10451919, se sídlem Razice 62, 418 04 Hrobčice, jako správce, a to jen za účelem vyřízení vaší poptávky a případné objednávky (jednání o uzavření smlouvy). Údaje nepředáváme dalším osobám kromě poskytovatele technické služby, přes kterou formulář odesílá zprávy. Uchováváme je po dobu nutnou k vyřízení poptávky; pokud dojde k objednávce, po dobu stanovenou účetními a daňovými předpisy. Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování a právo podat stížnost u Úřadu pro ochranu osobních údajů. Své požadavky pište na info@pilabilina.cz.</p>
 </div>
 </section>
 </main>
@@ -474,6 +480,15 @@ Palivové dřevo, Pila Bílina
     if (!WOODS[st.wood].price) document.getElementById('formForm').value = st.form === 'spalky' ? 'Špalky' : 'Štípané';
   });
   render();
+  // Hláška po odeslání formuláře (kontakt.php přesměruje zpět s ?poptavka=ok|chyba)
+  var q = new URLSearchParams(location.search).get('poptavka');
+  if (q) {
+    var m = document.getElementById('formMsg');
+    m.hidden = false;
+    m.className = 'form-msg full ' + (q === 'ok' ? 'ok' : 'err');
+    m.textContent = q === 'ok' ? 'Děkujeme, poptávka byla odeslána. Ozveme se vám s cenovou nabídkou.' : 'Poptávku se nepodařilo odeslat. Zkontrolujte prosím povinná pole, nebo nám zavolejte na 604 191 299.';
+    document.getElementById('poptavka').scrollIntoView();
+  }
 })();
 </script>
 </body>
